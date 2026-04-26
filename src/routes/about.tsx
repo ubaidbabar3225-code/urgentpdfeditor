@@ -28,7 +28,7 @@ function AboutPage() {
     <div className="container mx-auto px-4 py-16 max-w-4xl">
       <div className="text-center mb-12 animate-fade-up">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-          About <span className="bg-gradient-primary bg-clip-text text-transparent">UrgentPDFEditor</span>
+          About <span className="bg-gradient-primary bg-clip-text text-slate-950">UrgentPDFEditor</span>
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           We built UrgentPDFEditor because PDF tools shouldn't require uploads, accounts, or compromise your privacy.
