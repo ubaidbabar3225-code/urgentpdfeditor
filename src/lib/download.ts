@@ -1,7 +1,17 @@
 import { saveAs } from "file-saver";
 
-export function downloadBlob(data: BlobPart | Blob, filename: string, mime?: string) {
-  const blob = data instanceof Blob ? data : new Blob([data], { type: mime ?? "application/octet-stream" });
+export function downloadBlob(data: Uint8Array | ArrayBuffer | Blob | string, filename: string, mime?: string) {
+  let blob: Blob;
+  if (data instanceof Blob) {
+    blob = data;
+  } else if (data instanceof Uint8Array) {
+    // Copy bytes into a fresh ArrayBuffer to avoid SharedArrayBuffer typing issues
+    const ab = new ArrayBuffer(data.byteLength);
+    new Uint8Array(ab).set(data);
+    blob = new Blob([ab], { type: mime ?? "application/octet-stream" });
+  } else {
+    blob = new Blob([data as BlobPart], { type: mime ?? "application/octet-stream" });
+  }
   saveAs(blob, filename);
 }
 
