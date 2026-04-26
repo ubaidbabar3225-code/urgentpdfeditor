@@ -31,20 +31,26 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UrgentPDFEditor — Fast, Free PDF Tools Online" },
+      { title: "Free PDF Converter & Editor Online – UrgentPDFEditor (All-in" },
       {
         name: "description",
         content:
           "Free online PDF tools: convert, merge, split, compress, rotate, watermark, lock and unlock PDFs. 100% in-browser, your files stay private.",
       },
       { name: "author", content: "UrgentPDFEditor" },
-      { property: "og:title", content: "UrgentPDFEditor — Fast, Free PDF Tools Online" },
+      { property: "og:title", content: "Free PDF Converter & Editor Online – UrgentPDFEditor (All-in" },
       {
         property: "og:description",
         content: "13 free PDF tools that work entirely in your browser. No upload, no signup, no waiting.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Free PDF Converter & Editor Online – UrgentPDFEditor (All-in" },
+      { name: "description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
+      { property: "og:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
+      { name: "twitter:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
