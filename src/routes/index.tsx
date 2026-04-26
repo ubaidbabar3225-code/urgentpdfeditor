@@ -39,7 +39,7 @@ function HomePage() {
           <h1 className="mt-5 text-4xl md:text-6xl font-bold tracking-tight animate-fade-up">
             Every PDF tool you need,
             <br />
-            <span className="bg-gradient-primary bg-clip-text text-transparent">all in your browser.</span>
+            <span className="bg-gradient-primary bg-clip-text text-slate-950">all in your browser.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base md:text-lg text-muted-foreground animate-fade-up">
             Convert, merge, split, compress, watermark and protect PDFs in seconds. Your files never leave your
