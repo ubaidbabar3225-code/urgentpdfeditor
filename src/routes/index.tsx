@@ -76,10 +76,9 @@ function HomePage() {
                 {items.map((tool) => {
                   const Icon = tool.icon;
                   return (
-                    <Link
+                    <a
                       key={tool.slug}
-                      to="/tool/$slug"
-                      params={{ slug: tool.slug }}
+                      href={`/${tool.slug}`}
                       className="group relative rounded-2xl border border-border bg-card p-5 shadow-soft hover:shadow-elevated hover:-translate-y-1 hover:border-primary/40 transition-smooth"
                     >
                       <div
@@ -91,7 +90,7 @@ function HomePage() {
                         {tool.title}
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
