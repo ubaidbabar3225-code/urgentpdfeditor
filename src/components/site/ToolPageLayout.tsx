@@ -105,11 +105,10 @@ export function ToolPageLayout({ seo, children }: Props) {
               const t = tools.find((x) => x.slug === slug);
               if (!t) return null;
               const Icon = t.icon;
-              const path = `/${slug}` as const;
               return (
-                <Link
+                <a
                   key={slug}
-                  to={path}
+                  href={`/${slug}`}
                   className="group rounded-2xl border border-border bg-card p-4 shadow-soft hover:-translate-y-1 hover:shadow-elevated hover:border-primary/40 transition-smooth"
                 >
                   <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${t.color} shadow-soft`}>
