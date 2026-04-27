@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+// no router Link needed — related tool links use full reload <a> for simplicity
 import { ArrowRight, CheckCircle2, ChevronDown, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { useState } from "react";
 import { ToolShell } from "@/components/site/ToolShell";
