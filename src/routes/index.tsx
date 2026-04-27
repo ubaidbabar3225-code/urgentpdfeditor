@@ -1,33 +1,22 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { tools } from "@/lib/tools";
 import { Shield, Zap, Lock as LockIcon, Sparkles } from "lucide-react";
-import { jsonLdScripts, organizationJsonLd, websiteJsonLd, faqJsonLd } from "@/lib/seo";
-import { canonical, SITE_DESCRIPTION } from "@/lib/site";
-
-const HOME_FAQS = [
-  { q: "Are these PDF tools really free?", a: "Yes. Every tool on UrgentPDFEditor is 100% free with no signup, no daily quota and no watermark added to your output." },
-  { q: "Do you upload my files to a server?", a: "No. All processing runs locally in your browser using open-source libraries (pdf-lib, jsPDF, pdfjs, mammoth, docx). Your files never leave your device." },
-  { q: "Which PDF tools are included?", a: "Convert images to PDF (JPG, PNG, image to PDF), Word to PDF and PDF to Word, PDF to JPG, plus merge PDF, split PDF, rotate PDF, compress PDF, watermark PDF, lock PDF and unlock PDF." },
-  { q: "Does it work on mobile?", a: "Yes. UrgentPDFEditor works on iPhone, iPad and Android browsers. Just open the page and tap a tool." },
-  { q: "Are the converted files watermarked?", a: "No. We never add watermarks. Whatever text you choose to add with the watermark tool is the only thing that appears on your PDFs." },
-];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free PDF Tools Online — UrgentPDFEditor (13 Tools, No Upload)" },
-      { name: "description", content: SITE_DESCRIPTION },
-      { name: "keywords", content: "free pdf tools, pdf to word free, image to pdf, merge pdf online, compress pdf free, online pdf editor, free pdf converter" },
-      { property: "og:title", content: "Free PDF Tools Online — UrgentPDFEditor" },
-      { property: "og:description", content: SITE_DESCRIPTION },
-      { property: "og:url", content: canonical("/") },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Free PDF Tools Online — UrgentPDFEditor" },
-      { name: "twitter:description", content: SITE_DESCRIPTION },
+      { title: "UrgentPDFEditor — 13 Free PDF Tools, 100% In-Browser" },
+      {
+        name: "description",
+        content:
+          "Convert, merge, split, compress, rotate, watermark and protect PDFs for free. Files never leave your device — fast, private, no signup.",
+      },
+      { property: "og:title", content: "UrgentPDFEditor — 13 Free PDF Tools" },
+      {
+        property: "og:description",
+        content: "Free PDF tools right in your browser. Private and fast.",
+      },
     ],
-    links: [{ rel: "canonical", href: canonical("/") }],
-    scripts: jsonLdScripts([websiteJsonLd(), organizationJsonLd(), faqJsonLd(HOME_FAQS)]),
   }),
   component: HomePage,
 });
@@ -76,9 +65,10 @@ function HomePage() {
                 {items.map((tool) => {
                   const Icon = tool.icon;
                   return (
-                    <a
+                    <Link
                       key={tool.slug}
-                      href={`/${tool.slug}`}
+                      to="/tool/$slug"
+                      params={{ slug: tool.slug }}
                       className="group relative rounded-2xl border border-border bg-card p-5 shadow-soft hover:shadow-elevated hover:-translate-y-1 hover:border-primary/40 transition-smooth"
                     >
                       <div
@@ -90,7 +80,7 @@ function HomePage() {
                         {tool.title}
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>

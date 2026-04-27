@@ -9,104 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WordToPdfRouteImport } from './routes/word-to-pdf'
-import { Route as WatermarkPdfRouteImport } from './routes/watermark-pdf'
-import { Route as UnlockPdfRouteImport } from './routes/unlock-pdf'
-import { Route as SplitPdfRouteImport } from './routes/split-pdf'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RotatePdfRouteImport } from './routes/rotate-pdf'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as PngToPdfRouteImport } from './routes/png-to-pdf'
-import { Route as PdfToWordRouteImport } from './routes/pdf-to-word'
-import { Route as PdfToJpgRouteImport } from './routes/pdf-to-jpg'
-import { Route as MergePdfRouteImport } from './routes/merge-pdf'
-import { Route as LockPdfRouteImport } from './routes/lock-pdf'
-import { Route as JpgToPdfRouteImport } from './routes/jpg-to-pdf'
-import { Route as ImageToPdfRouteImport } from './routes/image-to-pdf'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CompressPdfRouteImport } from './routes/compress-pdf'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolSlugRouteImport } from './routes/tool.$slug'
 
-const WordToPdfRoute = WordToPdfRouteImport.update({
-  id: '/word-to-pdf',
-  path: '/word-to-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WatermarkPdfRoute = WatermarkPdfRouteImport.update({
-  id: '/watermark-pdf',
-  path: '/watermark-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UnlockPdfRoute = UnlockPdfRouteImport.update({
-  id: '/unlock-pdf',
-  path: '/unlock-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SplitPdfRoute = SplitPdfRouteImport.update({
-  id: '/split-pdf',
-  path: '/split-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RotatePdfRoute = RotatePdfRouteImport.update({
-  id: '/rotate-pdf',
-  path: '/rotate-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PngToPdfRoute = PngToPdfRouteImport.update({
-  id: '/png-to-pdf',
-  path: '/png-to-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PdfToWordRoute = PdfToWordRouteImport.update({
-  id: '/pdf-to-word',
-  path: '/pdf-to-word',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PdfToJpgRoute = PdfToJpgRouteImport.update({
-  id: '/pdf-to-jpg',
-  path: '/pdf-to-jpg',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MergePdfRoute = MergePdfRouteImport.update({
-  id: '/merge-pdf',
-  path: '/merge-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LockPdfRoute = LockPdfRouteImport.update({
-  id: '/lock-pdf',
-  path: '/lock-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JpgToPdfRoute = JpgToPdfRouteImport.update({
-  id: '/jpg-to-pdf',
-  path: '/jpg-to-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImageToPdfRoute = ImageToPdfRouteImport.update({
-  id: '/image-to-pdf',
-  path: '/image-to-pdf',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompressPdfRoute = CompressPdfRouteImport.update({
-  id: '/compress-pdf',
-  path: '/compress-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -128,267 +38,44 @@ const ToolSlugRoute = ToolSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/compress-pdf': typeof CompressPdfRoute
   '/contact': typeof ContactRoute
-  '/image-to-pdf': typeof ImageToPdfRoute
-  '/jpg-to-pdf': typeof JpgToPdfRoute
-  '/lock-pdf': typeof LockPdfRoute
-  '/merge-pdf': typeof MergePdfRoute
-  '/pdf-to-jpg': typeof PdfToJpgRoute
-  '/pdf-to-word': typeof PdfToWordRoute
-  '/png-to-pdf': typeof PngToPdfRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/rotate-pdf': typeof RotatePdfRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/split-pdf': typeof SplitPdfRoute
-  '/unlock-pdf': typeof UnlockPdfRoute
-  '/watermark-pdf': typeof WatermarkPdfRoute
-  '/word-to-pdf': typeof WordToPdfRoute
   '/tool/$slug': typeof ToolSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/compress-pdf': typeof CompressPdfRoute
   '/contact': typeof ContactRoute
-  '/image-to-pdf': typeof ImageToPdfRoute
-  '/jpg-to-pdf': typeof JpgToPdfRoute
-  '/lock-pdf': typeof LockPdfRoute
-  '/merge-pdf': typeof MergePdfRoute
-  '/pdf-to-jpg': typeof PdfToJpgRoute
-  '/pdf-to-word': typeof PdfToWordRoute
-  '/png-to-pdf': typeof PngToPdfRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/rotate-pdf': typeof RotatePdfRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/split-pdf': typeof SplitPdfRoute
-  '/unlock-pdf': typeof UnlockPdfRoute
-  '/watermark-pdf': typeof WatermarkPdfRoute
-  '/word-to-pdf': typeof WordToPdfRoute
   '/tool/$slug': typeof ToolSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/compress-pdf': typeof CompressPdfRoute
   '/contact': typeof ContactRoute
-  '/image-to-pdf': typeof ImageToPdfRoute
-  '/jpg-to-pdf': typeof JpgToPdfRoute
-  '/lock-pdf': typeof LockPdfRoute
-  '/merge-pdf': typeof MergePdfRoute
-  '/pdf-to-jpg': typeof PdfToJpgRoute
-  '/pdf-to-word': typeof PdfToWordRoute
-  '/png-to-pdf': typeof PngToPdfRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/rotate-pdf': typeof RotatePdfRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/split-pdf': typeof SplitPdfRoute
-  '/unlock-pdf': typeof UnlockPdfRoute
-  '/watermark-pdf': typeof WatermarkPdfRoute
-  '/word-to-pdf': typeof WordToPdfRoute
   '/tool/$slug': typeof ToolSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/compress-pdf'
-    | '/contact'
-    | '/image-to-pdf'
-    | '/jpg-to-pdf'
-    | '/lock-pdf'
-    | '/merge-pdf'
-    | '/pdf-to-jpg'
-    | '/pdf-to-word'
-    | '/png-to-pdf'
-    | '/robots.txt'
-    | '/rotate-pdf'
-    | '/sitemap.xml'
-    | '/split-pdf'
-    | '/unlock-pdf'
-    | '/watermark-pdf'
-    | '/word-to-pdf'
-    | '/tool/$slug'
+  fullPaths: '/' | '/about' | '/contact' | '/tool/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/compress-pdf'
-    | '/contact'
-    | '/image-to-pdf'
-    | '/jpg-to-pdf'
-    | '/lock-pdf'
-    | '/merge-pdf'
-    | '/pdf-to-jpg'
-    | '/pdf-to-word'
-    | '/png-to-pdf'
-    | '/robots.txt'
-    | '/rotate-pdf'
-    | '/sitemap.xml'
-    | '/split-pdf'
-    | '/unlock-pdf'
-    | '/watermark-pdf'
-    | '/word-to-pdf'
-    | '/tool/$slug'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/compress-pdf'
-    | '/contact'
-    | '/image-to-pdf'
-    | '/jpg-to-pdf'
-    | '/lock-pdf'
-    | '/merge-pdf'
-    | '/pdf-to-jpg'
-    | '/pdf-to-word'
-    | '/png-to-pdf'
-    | '/robots.txt'
-    | '/rotate-pdf'
-    | '/sitemap.xml'
-    | '/split-pdf'
-    | '/unlock-pdf'
-    | '/watermark-pdf'
-    | '/word-to-pdf'
-    | '/tool/$slug'
+  to: '/' | '/about' | '/contact' | '/tool/$slug'
+  id: '__root__' | '/' | '/about' | '/contact' | '/tool/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CompressPdfRoute: typeof CompressPdfRoute
   ContactRoute: typeof ContactRoute
-  ImageToPdfRoute: typeof ImageToPdfRoute
-  JpgToPdfRoute: typeof JpgToPdfRoute
-  LockPdfRoute: typeof LockPdfRoute
-  MergePdfRoute: typeof MergePdfRoute
-  PdfToJpgRoute: typeof PdfToJpgRoute
-  PdfToWordRoute: typeof PdfToWordRoute
-  PngToPdfRoute: typeof PngToPdfRoute
-  RobotsDottxtRoute: typeof RobotsDottxtRoute
-  RotatePdfRoute: typeof RotatePdfRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SplitPdfRoute: typeof SplitPdfRoute
-  UnlockPdfRoute: typeof UnlockPdfRoute
-  WatermarkPdfRoute: typeof WatermarkPdfRoute
-  WordToPdfRoute: typeof WordToPdfRoute
   ToolSlugRoute: typeof ToolSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/word-to-pdf': {
-      id: '/word-to-pdf'
-      path: '/word-to-pdf'
-      fullPath: '/word-to-pdf'
-      preLoaderRoute: typeof WordToPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/watermark-pdf': {
-      id: '/watermark-pdf'
-      path: '/watermark-pdf'
-      fullPath: '/watermark-pdf'
-      preLoaderRoute: typeof WatermarkPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/unlock-pdf': {
-      id: '/unlock-pdf'
-      path: '/unlock-pdf'
-      fullPath: '/unlock-pdf'
-      preLoaderRoute: typeof UnlockPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/split-pdf': {
-      id: '/split-pdf'
-      path: '/split-pdf'
-      fullPath: '/split-pdf'
-      preLoaderRoute: typeof SplitPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rotate-pdf': {
-      id: '/rotate-pdf'
-      path: '/rotate-pdf'
-      fullPath: '/rotate-pdf'
-      preLoaderRoute: typeof RotatePdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/png-to-pdf': {
-      id: '/png-to-pdf'
-      path: '/png-to-pdf'
-      fullPath: '/png-to-pdf'
-      preLoaderRoute: typeof PngToPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pdf-to-word': {
-      id: '/pdf-to-word'
-      path: '/pdf-to-word'
-      fullPath: '/pdf-to-word'
-      preLoaderRoute: typeof PdfToWordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pdf-to-jpg': {
-      id: '/pdf-to-jpg'
-      path: '/pdf-to-jpg'
-      fullPath: '/pdf-to-jpg'
-      preLoaderRoute: typeof PdfToJpgRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/merge-pdf': {
-      id: '/merge-pdf'
-      path: '/merge-pdf'
-      fullPath: '/merge-pdf'
-      preLoaderRoute: typeof MergePdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lock-pdf': {
-      id: '/lock-pdf'
-      path: '/lock-pdf'
-      fullPath: '/lock-pdf'
-      preLoaderRoute: typeof LockPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jpg-to-pdf': {
-      id: '/jpg-to-pdf'
-      path: '/jpg-to-pdf'
-      fullPath: '/jpg-to-pdf'
-      preLoaderRoute: typeof JpgToPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/image-to-pdf': {
-      id: '/image-to-pdf'
-      path: '/image-to-pdf'
-      fullPath: '/image-to-pdf'
-      preLoaderRoute: typeof ImageToPdfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compress-pdf': {
-      id: '/compress-pdf'
-      path: '/compress-pdf'
-      fullPath: '/compress-pdf'
-      preLoaderRoute: typeof CompressPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -418,22 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CompressPdfRoute: CompressPdfRoute,
   ContactRoute: ContactRoute,
-  ImageToPdfRoute: ImageToPdfRoute,
-  JpgToPdfRoute: JpgToPdfRoute,
-  LockPdfRoute: LockPdfRoute,
-  MergePdfRoute: MergePdfRoute,
-  PdfToJpgRoute: PdfToJpgRoute,
-  PdfToWordRoute: PdfToWordRoute,
-  PngToPdfRoute: PngToPdfRoute,
-  RobotsDottxtRoute: RobotsDottxtRoute,
-  RotatePdfRoute: RotatePdfRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SplitPdfRoute: SplitPdfRoute,
-  UnlockPdfRoute: UnlockPdfRoute,
-  WatermarkPdfRoute: WatermarkPdfRoute,
-  WordToPdfRoute: WordToPdfRoute,
   ToolSlugRoute: ToolSlugRoute,
 }
 export const routeTree = rootRouteImport
