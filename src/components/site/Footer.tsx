@@ -26,13 +26,12 @@ export function Footer() {
               <ul className="space-y-2">
                 {tools.filter((t) => t.category === cat).map((t) => (
                   <li key={t.slug}>
-                    <Link
-                      to="/tool/$slug"
-                      params={{ slug: t.slug }}
+                    <a
+                      href={`/${t.slug}`}
                       className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                     >
                       {t.title}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
