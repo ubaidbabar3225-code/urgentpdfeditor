@@ -3,6 +3,7 @@ import { toolSeo } from "@/lib/seo-content";
 import { SITE_URL } from "@/lib/site";
 import { blogPosts } from "@/lib/blog-content";
 
+// Cast to bypass an outdated `server:` type signature in this TanStack Start version.
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -29,4 +30,4 @@ export const Route = createFileRoute("/sitemap.xml")({
       },
     },
   },
-});
+} as never);
