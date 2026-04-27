@@ -13,7 +13,9 @@ import { Route as WordToPdfRouteImport } from './routes/word-to-pdf'
 import { Route as WatermarkPdfRouteImport } from './routes/watermark-pdf'
 import { Route as UnlockPdfRouteImport } from './routes/unlock-pdf'
 import { Route as SplitPdfRouteImport } from './routes/split-pdf'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RotatePdfRouteImport } from './routes/rotate-pdf'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PngToPdfRouteImport } from './routes/png-to-pdf'
 import { Route as PdfToWordRouteImport } from './routes/pdf-to-word'
 import { Route as PdfToJpgRouteImport } from './routes/pdf-to-jpg'
@@ -47,9 +49,19 @@ const SplitPdfRoute = SplitPdfRouteImport.update({
   path: '/split-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RotatePdfRoute = RotatePdfRouteImport.update({
   id: '/rotate-pdf',
   path: '/rotate-pdf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PngToPdfRoute = PngToPdfRouteImport.update({
@@ -125,7 +137,9 @@ export interface FileRoutesByFullPath {
   '/pdf-to-jpg': typeof PdfToJpgRoute
   '/pdf-to-word': typeof PdfToWordRoute
   '/png-to-pdf': typeof PngToPdfRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/rotate-pdf': typeof RotatePdfRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split-pdf': typeof SplitPdfRoute
   '/unlock-pdf': typeof UnlockPdfRoute
   '/watermark-pdf': typeof WatermarkPdfRoute
@@ -144,7 +158,9 @@ export interface FileRoutesByTo {
   '/pdf-to-jpg': typeof PdfToJpgRoute
   '/pdf-to-word': typeof PdfToWordRoute
   '/png-to-pdf': typeof PngToPdfRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/rotate-pdf': typeof RotatePdfRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split-pdf': typeof SplitPdfRoute
   '/unlock-pdf': typeof UnlockPdfRoute
   '/watermark-pdf': typeof WatermarkPdfRoute
@@ -164,7 +180,9 @@ export interface FileRoutesById {
   '/pdf-to-jpg': typeof PdfToJpgRoute
   '/pdf-to-word': typeof PdfToWordRoute
   '/png-to-pdf': typeof PngToPdfRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/rotate-pdf': typeof RotatePdfRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split-pdf': typeof SplitPdfRoute
   '/unlock-pdf': typeof UnlockPdfRoute
   '/watermark-pdf': typeof WatermarkPdfRoute
@@ -185,7 +203,9 @@ export interface FileRouteTypes {
     | '/pdf-to-jpg'
     | '/pdf-to-word'
     | '/png-to-pdf'
+    | '/robots.txt'
     | '/rotate-pdf'
+    | '/sitemap.xml'
     | '/split-pdf'
     | '/unlock-pdf'
     | '/watermark-pdf'
@@ -204,7 +224,9 @@ export interface FileRouteTypes {
     | '/pdf-to-jpg'
     | '/pdf-to-word'
     | '/png-to-pdf'
+    | '/robots.txt'
     | '/rotate-pdf'
+    | '/sitemap.xml'
     | '/split-pdf'
     | '/unlock-pdf'
     | '/watermark-pdf'
@@ -223,7 +245,9 @@ export interface FileRouteTypes {
     | '/pdf-to-jpg'
     | '/pdf-to-word'
     | '/png-to-pdf'
+    | '/robots.txt'
     | '/rotate-pdf'
+    | '/sitemap.xml'
     | '/split-pdf'
     | '/unlock-pdf'
     | '/watermark-pdf'
@@ -243,7 +267,9 @@ export interface RootRouteChildren {
   PdfToJpgRoute: typeof PdfToJpgRoute
   PdfToWordRoute: typeof PdfToWordRoute
   PngToPdfRoute: typeof PngToPdfRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   RotatePdfRoute: typeof RotatePdfRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SplitPdfRoute: typeof SplitPdfRoute
   UnlockPdfRoute: typeof UnlockPdfRoute
   WatermarkPdfRoute: typeof WatermarkPdfRoute
@@ -281,11 +307,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplitPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rotate-pdf': {
       id: '/rotate-pdf'
       path: '/rotate-pdf'
       fullPath: '/rotate-pdf'
       preLoaderRoute: typeof RotatePdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/png-to-pdf': {
@@ -387,7 +427,9 @@ const rootRouteChildren: RootRouteChildren = {
   PdfToJpgRoute: PdfToJpgRoute,
   PdfToWordRoute: PdfToWordRoute,
   PngToPdfRoute: PngToPdfRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   RotatePdfRoute: RotatePdfRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SplitPdfRoute: SplitPdfRoute,
   UnlockPdfRoute: UnlockPdfRoute,
   WatermarkPdfRoute: WatermarkPdfRoute,
@@ -397,3 +439,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
