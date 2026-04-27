@@ -117,7 +117,7 @@ export function ToolPageLayout({ seo, children }: Props) {
                   <div className="mt-3 text-sm font-semibold group-hover:text-primary transition-smooth">
                     {t.title}
                   </div>
-                </Link>
+                </a>
               );
             })}
           </div>
