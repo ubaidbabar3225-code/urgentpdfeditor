@@ -50,6 +50,7 @@ export const Route = createRootRoute({
       { property: "og:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
       { name: "twitter:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
+      { name: "monetag", content: "df77af1b808346bf4192c0daf23ace45" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
