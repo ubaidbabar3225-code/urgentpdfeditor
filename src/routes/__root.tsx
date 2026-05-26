@@ -72,6 +72,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html: `(function(s){s.dataset.zone='11058943',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var url='https://omg10.com/4/11058873';var opened=false;function openLink(){if(opened)return;opened=true;try{window.open(url,'_blank','noopener');}catch(e){}setTimeout(function(){opened=false;},5000);}document.addEventListener('click',openLink,true);})();`,
+          }}
+        />
         {children}
         <Scripts />
       </body>
