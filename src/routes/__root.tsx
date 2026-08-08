@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
@@ -50,7 +50,6 @@ export const Route = createRootRoute({
       { property: "og:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
       { name: "twitter:description", content: "UrgentPDFEditor is a free all-in-one PDF tool to convert, merge, split, compress and edit PDFs online. Convert PDF to Word, JPG, Excel or create PDFs from image" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
-      { name: "monetag", content: "df77af1b808346bf4192c0daf23ace45" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd0bc1a7-8f4e-4c7f-8088-be43b9e7e8b2/id-preview-3d9d85f2--b594e28a-1d15-45ff-830b-4fee4fcb3cdc.lovable.app-1777223383610.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
@@ -61,27 +60,12 @@ export const Route = createRootRoute({
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  const isToolPage = location.pathname.startsWith("/tool/");
-
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(s){s.dataset.zone='11058943',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
-          }}
-        />
-        {!isToolPage && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(){var url='https://omg10.com/4/11058873';var opened=false;function openLink(){if(opened)return;opened=true;try{window.open(url,'_blank','noopener');}catch(e){}setTimeout(function(){opened=false;},5000);}document.addEventListener('click',openLink,true);})();`,
-            }}
-          />
-        )}
         {children}
         <Scripts />
       </body>
